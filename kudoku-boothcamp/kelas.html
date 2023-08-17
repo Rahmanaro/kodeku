@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="kelas.css">
+</head>
+<body class="body">
+    <nav class="navbar">
+        <h1 class="tulisan-kodeku">
+        KODEKU
+        </h1>
+        <div class="layout">
+            <p>
+                <li><a class="tim" href="tim.html">Tim</a></li>
+                <li><a class="kelas" href="kelas.html">Kelas</a></li>
+                <li><a class="skill" href="">Skill</a></li>
+                <li><a class="alumni" href="">Alumni</a></li>
+            
+            </p>
+        </div>
+    </nav>
+    <h1 class="tim-inti">TIM INTI KODEKU</h1>
+    
+    <div class="biodata-tim" id="data">
+        <div class="biodata-rahman" id="rahman" onclick="openModal(0)">
+            <img src="Assets/gambar4.jpg" alt="gambar4">
+            <div class="tulisan-biodata">
+            <p>Fullstack Dev</p>
+            <p>Rahman</p>
+            <p>4 bulan course</p>
+            <p>Rp. 10.000.000</p>
+            </div>
+        </div>
+        <div class="biodata-bisma" id="bisma" onclick="openModal(1)">
+            <img src="Assets/gambar3.jpg" alt="gambar3">
+            <div class="tulisan-biodata">
+            <p>UI/UX</p>
+            <p>Bisma</p>
+            <p>4 bulan course</p>
+            <p>Rp. 12.000.000</p>
+            </div>
+        </div>
+        <div class="biodata-bontel" id="bontel" onclick="openModal(2)">
+            <img src="Assets/gambar2.jpg" alt="gambar2">
+            <div class="tulisan-biodata">
+            <p>Data Analyst</p>
+            <p>Bontel</p>
+            <p>4 bulan course</p>
+            <p>Rp. 10.000.000</p>
+            </div>
+        </div>
+        <div class="biodata-muthi" id="muthi" onclick="openModal(3)">
+            <img src="Assets/gambar6.jpg" alt="gambar6">
+            <div class="tulisan-biodata">
+            <p>Data Engineer</p>
+            <p>Muthi</p>
+            <p>4 bulan course</p>
+            <p>Rp. 15.000.000</p>
+            </div>
+        </div>
+    </div>
+<br>
+<div id="isi-rincian" class="isi-rincian">
+    <div class="rincian-hapus">
+        <h3 class="rincian">Rincian paket yang sudah dikonfirmasi</h3>
+        <div>
+            <button onclick="hapusData()" class="tutup-keranjang">Hapus Kelas</button>
+            <button onclick="closeCart()" class="tutup-keranjang">Tutup</button>
+        </div>
+    </div>
+    <div class="Keranjang">
+        <p>Keranjang Kamu</p>
+        <p >1. Nama Course: <span id="nama-course"></span></p>
+        <p >2. Nama Mentor: <span id="nama-mentor"></span></p>
+        <p >3. ID Pembelian: <span id="id-pembelian"></span></p>
+    </div>
+    <div class="harga">
+        <div class="total-harga">
+            <p>Total Harga:</p>
+            <p id="harga"></p>
+        </div>
+    </div>
+</div>
+    
+
+
+<!-- The Modal -->
+<div id="myModal" onclick="closeModal()" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span onclick="closeModal()" id="button-x" class="close">&times;</span>
+        <p id="nama-modal"></p>
+        <p id="nama-modal-email"></p>
+        <p id="nama-modal-foto"></p>
+        <p id="nama-modal-role"></p>
+        <p id="nama-modal-country"></p>
+        <button onclick="tambahkanCart()" id="tambahkan" class="tambahkan">Tambahkan</button>
+    </div>
+
+</div>
+
+<script>
+    let data = [
+        {
+            nama: "rahman",
+            role: "Fullstack Dev",
+            penjelasan: "Full-stack developer adalah seorang ahli teknologi yang mampu memperbaiki front-end maupun back-end dari sebuah aplikasi.",
+            waktu: "4 bulan course",
+            harga: "Rp. 10.000.000",
+            
+        },
+        {
+            nama: "bisma",
+            role: "UI/UX design",
+            penjelasan: "Dalam dunia desain produk, dikenal istilah antarmuka pengguna atau user interface (UI) dan juga pengalaman pengguna atau user experience (UX). Keduanya memiliki perbedaan mendasar, dimana UX berfokus pada perjalanan pengguna untuk memecahkan masalah.",
+            waktu: "4 bulan course",
+            harga: "Rp. 12.000.000",
+        },
+        {
+            nama: "bontel",
+            role: "Data Analyst",
+            penjelasan: "Analisis data adalah proses inspeksi, pembersihan dan pemodelan data dengan tujuan menemukan informasi yang berguna, menginformasikan kesimpulan dan mendukung pengambilan keputusan.",
+            waktu: "4 bulan course",
+            harga: "Rp. 10.000.000",
+        },
+        {
+            nama: "muthi",
+            role: "Data Engineer",
+            penjelasan: "Big data engineer adalah profesi yang bertanggung jawab mengembangkan, memelihara, mengetes, menganalisis, dan mengevaluasi big data dalam perusahaan.",
+            waktu: "4 bulan course",
+            harga: "Rp. 15.000.000",
+        }
+    ]
+
+    let tambahkan = [];
+    let indexcard = 0;
+    function openModal (index) {
+       indexcard = index
+       console.log(indexcard)
+        document.getElementById("myModal").style.display = "block"
+       document.getElementById("nama-modal").innerHTML = data[index].role
+       document.getElementById("nama-modal-email").innerHTML = data[index].penjelasan 
+       document.getElementById("nama-modal-foto").innerHTML = data[index].waktu 
+       document.getElementById("nama-modal-role").innerHTML = data[index].harga
+       document.getElementById("image").src = data[index].foto 
+       console.log(nama)
+       console.log(email)
+    }
+    function closeModal () {
+        document.getElementById("myModal").style.display = "none"
+    }
+
+    function uuidv4() {
+        return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+            (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+        );
+    }
+
+    function tambahkanCart () {
+        tambahkan.push(data[indexcard])
+        console.log(tambahkan)
+        document.getElementById("isi-rincian").style.display = "flex"
+        document.getElementById("nama-course").innerHTML += data[indexcard].role
+        document.getElementById("nama-mentor").innerHTML += data[indexcard].nama
+        document.getElementById("id-pembelian").innerHTML += uuidv4()
+        document.getElementById("harga").innerHTML += data[indexcard].harga
+    }
+   
+    function closeCart () {
+        document.getElementById("isi-rincian").style.display = "none"
+        
+    }
+
+    function hapusData () {
+        document.getElementById("nama-course").innerHTML = ""
+        document.getElementById("nama-mentor").innerHTML = ""
+        document.getElementById("id-pembelian").innerHTML = ""
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+.body-web {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background-color: bisque;
+}
+
+.navbar {
+background-color: rgb(46, 143, 143);
+display: flex;
+flex: row;
+justify-content: space-around;
+text-decoration: none;
+}
+
+.layout {
+display: flex;
+flex: row;
+list-style-type: none;
+margin: 10px;
+padding: 10px;
+gap: 50px;
+text-decoration: none;
+}
+
+.tulisan-kodeku {
+color: bisque;
+}
+
+
+.tim {
+text-decoration: none;
+color: bisque;
+}
+
+.kelas {
+text-decoration: none;
+color: bisque;
+}
+
+.skill {
+text-decoration: none;
+color: bisque;
+}
+
+.alumni {
+text-decoration: none;
+color: bisque;
+}
+
+.landing-page {
+background-image:url(Assets/background-image5.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+height: 700px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.enterprise {
+color: bisque;
+font-size: 70px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+.pantun {
+color: bisque;
+font-size: 20px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+.seemore {
+color: bisque;
+font-size: 20px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+.halamankedua {
+background-image:url(Assets/background-image7.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+height: 700px;
+display: grid;
+flex-direction: row;
+justify-content: space-between;
+grid-template-columns: 1fr 1fr;
+
+}
+
+.get-to-know {
+    color: bisque;
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gambar-cewe-ngoding {
+    width: 500px;
+    height: 300px;
+}
+.gambar-cewe-ngemusik {
+    width: 500px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+.tulisan-gambar {
+    color: bisque;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

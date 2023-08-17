@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="tim.css">
+</head>
+<body class="body">
+    <nav class="navbar">
+        <h1 class="tulisan-kodeku">
+        KODEKU
+        </h1>
+        <div class="layout">
+            <p>
+                <li><a class="tim" href="tim.html">Tim</a></li>
+                <li><a class="kelas" href="kelas.html">Kelas</a></li>
+                <li><a class="skill" href="">Skill</a></li>
+                <li><a class="alumni" href="">Alumni</a></li>
+            
+            </p>
+        </div>
+    </nav>
+    <h1 class="tim-inti">TIM INTI KODEKU</h1>
+    
+    <div class="biodata-tim" id="data">
+        <div class="biodata-rahman" id="rahman" onclick="openModal(0)">
+            <img src="Assets/gambar4.jpg" alt="gambar4">
+            <div class="tulisan-biodata">
+            <p>Rahman</p> <p>[0]</p>
+            </div>
+            <br>
+            <div class="tulisan-biodata">
+            <p>Admin</p> <p>indo</p>
+            </div>
+        </div>
+        <div class="biodata-bisma" id="bisma" onclick="openModal(1)">
+            <img src="Assets/gambar3.jpg" alt="gambar3">
+            <div class="tulisan-biodata">
+            <p>Bisma</p> <p>[1]</p>
+            </div>
+            <br>
+            <div class="tulisan-biodata">
+            <p>Sales</p>  <p>indo</p>
+            </div>
+        </div>
+        <div class="biodata-bontel" id="bontel" onclick="openModal(2)">
+            <img src="Assets/gambar2.jpg" alt="gambar2">
+            <div class="tulisan-biodata">
+            <p>Bontel</p> <p>[2]</p>
+            </div>
+            <br>
+            <div class="tulisan-biodata">
+            <p>Hrd</p>  <p>indo</p>
+            </div>
+        </div>
+        <div class="biodata-muthi" id="muthi" onclick="openModal(3)">
+            <img src="Assets/gambar6.jpg" alt="gambar6">
+            <div class="tulisan-biodata">
+            <p>Muthi</p> <p>[3]</p>
+            </div>
+            <br>
+            <div class="tulisan-biodata">
+            <p>IT</p>  <p>indo</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- The Modal -->
+    <div id="myModal" onclick="closeModal()" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span onclick="closeModal()" id="button-x" class="close">&times;</span>
+            <p id="nama-modal"></p>
+            <p id="nama-modal-email"></p>
+            <img src="" alt="" id="image">
+            <p id="nama-modal-foto"></p>
+            <p id="nama-modal-role"></p>
+            <p id="nama-modal-country"></p>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        let data = [
+            {
+                nama: "rahman",
+                email: "rahmanaromahri@gmail.com",
+                foto: "Assets/gambar4.jpg",
+                role: "admin",
+                country: "indo"
+            },
+            {
+                nama: "bisma",
+                email: "bismamahri@gmail.com",
+                foto: "gambar2",
+                role: "sales",
+                country: "indo"
+            },
+            {
+                nama: "bontel",
+                email: "bontelmahri@gmail.com",
+                foto: "gambar3",
+                role: "hrd",
+                country: "indo"
+            },
+            {
+                nama: "muthi",
+                email: "muthi@gmail.com",
+                foto: "gambar4",
+                role: "it",
+                country: "indo"
+            }
+        ]
+        function openModal (index) {
+           document.getElementById("myModal").style.display = "block"
+           document.getElementById("nama-modal").innerHTML = data[index].nama
+           document.getElementById("nama-modal-email").innerHTML = data[index].email 
+           document.getElementById("nama-modal-foto").innerHTML = data[index].foto 
+           document.getElementById("nama-modal-role").innerHTML = data[index].role 
+           document.getElementById("nama-modal-country").innerHTML = data[index].country 
+           document.getElementById("image").src = data[index].foto 
+           console.log(nama)
+           console.log(email)
+        }
+        function closeModal () {
+            document.getElementById("myModal").style.display = "none"
+        }
+
+       
+    </script>
+</body>
+</html>
